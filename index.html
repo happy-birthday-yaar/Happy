@@ -8,9 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet"/>
   
   <style>
-    /* ============================================================
-       1. ROOT VARIABLES & MODERN THEME
-    ============================================================ */
     :root {
       --black: #1a1a24;
       --light-pink: #ffd6e0;
@@ -41,9 +38,6 @@
     h1, h2, h3, .serif { font-family: 'Merriweather', serif; }
     .handwritten { font-family: 'Caveat', cursive; }
 
-    /* ============================================================
-       2. SPLASH SCREEN & AMBIENT BACKGROUND
-    ============================================================ */
     #quote-splash {
       position: fixed; inset: 0; z-index: 99999;
       background: linear-gradient(135deg, #f0f7fb, #fdf2f4);
@@ -74,9 +68,6 @@
     .orb.blue { background: var(--sky-blue); width: 35vw; height: 35vw; bottom: 10%; right: -5%; animation-delay: -5s; }
     @keyframes floatOrb { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(10vw, 10vh) scale(1.1); } }
 
-    /* ============================================================
-       3. WIDGETS
-    ============================================================ */
     .jar-widget {
       text-align: center; margin: 2rem auto; padding: 2.5rem; 
       background: var(--white);
@@ -90,9 +81,6 @@
     }
     .jar-text { font-family: 'Merriweather', serif; font-size: 1.1rem; color: var(--black); min-height: 60px; display: flex; align-items: center; justify-content: center; transition: opacity 0.3s; font-style: italic; line-height: 1.6;}
 
-    /* ============================================================
-       4. HERO & TIMER SECTION
-    ============================================================ */
     #hero {
       position: relative; width: 100vw; min-height: calc(var(--vh, 1vh) * 100);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -124,15 +112,11 @@
     .greeting-text { position: absolute; width: 100%; text-align: center; font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--text-muted); opacity: 0; transition: opacity 1s ease; font-weight: 400;}
     .greeting-text.active { opacity: 1; }
 
-    /* ============================================================
-       5. GLOBAL SECTION LAYOUTS
-    ============================================================ */
     .section-wrap { padding: 6rem 2rem; position: relative; z-index: 2; }
     .section-title { text-align: center; font-size: clamp(2rem, 5vw, 2.8rem); color: var(--black); margin-bottom: 4rem; font-weight: 700; letter-spacing: -0.5px; }
     .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== QUOTES ===== */
     .quotes-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 800px; margin: 0 auto; }
     .quote-card { 
       background: var(--white); padding: 3rem; border-radius: 20px; 
@@ -143,7 +127,6 @@
     .quote-card::before { content: '“'; position: absolute; top: 10px; left: 20px; font-family: 'Merriweather', serif; font-size: 5rem; color: var(--sky-blue); opacity: 0.5; line-height: 1; }
     .quote-text { font-family: 'Merriweather', serif; font-size: 1.15rem; line-height: 1.9; color: var(--black); position: relative; z-index: 1; font-weight: 300; font-style: italic;}
 
-    /* ===== REASONS (GLASS CARDS) ===== */
     .reasons-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
     .reason-card { 
       padding: 2.5rem 2rem; border-radius: 20px; position: relative; transition: transform 0.3s; 
@@ -157,7 +140,6 @@
     .reason-num { font-family: 'Poppins', sans-serif; font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 15px; letter-spacing: 2px; }
     .reason-text { font-family: 'Poppins', sans-serif; font-weight: 400; font-size: 1rem; color: var(--black); line-height: 1.7; }
 
-    /* ===== CLOSING & POPUP ENVELOPE ===== */
     #closing { padding: 8rem 2rem; text-align: center; position: relative; z-index: 2; }
     .closing-text { font-family: 'Poppins', sans-serif; font-size: clamp(1rem, 3vw, 1.2rem); line-height: 2; max-width: 600px; margin: 0 auto 1.5rem; color: var(--text-muted); font-weight: 400;}
     
@@ -197,13 +179,13 @@
 </head>
 <body>
 
-<!-- AMBIENT BACKGROUND -->
+
 <div id="ambient-bg">
   <div class="orb pink"></div>
   <div class="orb blue"></div>
 </div>
 
-<!-- QUOTE SPLASH -->
+
 <div id="quote-splash">
   <div class="splash-quote visible">"In the cookie of life, friends are the chocolate chips."</div>
   <div class="splash-quote">"Thank you for being someone I can always count on."</div>
@@ -211,7 +193,7 @@
   <div class="splash-tap">Tap anywhere to open</div>
 </div>
 
-<!-- 1. HERO & TIMER -->
+
 <section id="hero">
   <div style="letter-spacing:4px; color:var(--text-muted); text-transform:uppercase; font-size:0.8rem; margin-bottom:1rem; font-weight:600; animation: fadeInUp 1s ease both;">To a wonderful friend</div>
   <h1 class="hero-name">Akash</h1>
@@ -228,7 +210,6 @@
   <div class="greeting-carousel" id="greeting-carousel"></div>
 
 <script>
-/* MULTILINGUAL GREETINGS */
 (function multilingualGreetings() {
   var greetings = [
     { lang: 'English', text: 'Happy Birthday' },
@@ -283,14 +264,14 @@
 </script>
 </section>
 
-<!-- COMPLIMENT JAR WIDGET -->
+
 <div class="jar-widget reveal" id="compliment-jar">
   <div style="font-size:2rem; margin-bottom:15px;">✨</div>
   <div style="font-size:0.75rem; color:var(--text-muted); font-weight: 600; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:10px;">Tap for a reminder</div>
   <div class="jar-text" id="jar-text">You are an incredibly supportive friend.</div>
 </div>
 
-<!-- QUOTES GRID -->
+
 <section class="section-wrap">
   <h2 class="section-title reveal">Thoughts On Friendship</h2>
   <div class="quotes-grid" id="quotes-container">
@@ -310,7 +291,7 @@
   </div>
 </section>
 
-<!-- REASONS (FRIENDSHIP NOTES) -->
+
 <section class="section-wrap">
   <h2 class="section-title reveal" style="margin-top: 2rem;">Things I Appreciate About You</h2>
   <div class="reasons-grid" id="reasons-container" style="margin-bottom: 2rem;">
@@ -327,7 +308,7 @@
   </div>
 </section>
 
-<!-- CLOSING -->
+
 <section id="closing">
   <div class="closing-text reveal">
     Thank you for being the kind of friend who simply understands. You deserve all the good things that come your way today and always.
@@ -335,7 +316,7 @@
   <div class="handwritten reveal" style="font-size: 3.5rem; color: var(--black); font-weight:700;">Happy Birthday</div>
 </section>
 
-<!-- SURPRISE BUTTON & POPUP -->
+
 <div id="surprise-trigger">
   <span class="click-this">Open me</span>
   <span style="font-size: 24px;">✉️</span>
@@ -364,9 +345,6 @@
 </div>
 
 <script>
-/* ============================================================
-   SPLASH SCREEN LOGIC
-============================================================ */
 const splash = document.getElementById('quote-splash');
 const quotes = splash.querySelectorAll('.splash-quote');
 
@@ -383,15 +361,11 @@ splash.addEventListener('pointerdown', () => {
 }, { once: true });
 
 
-/* ============================================================
-   WIDGET LOGIC & TIMERS
-============================================================ */
 window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(e => e.forEach(en => { if(en.isIntersecting) en.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
 
-// Live Timer (Since April 25, 2009)
 setInterval(() => {
     const diff = new Date().getTime() - new Date("2009-04-25T00:00:00").getTime();
     document.getElementById("t-days").innerText = Math.floor(diff / 86400000);
@@ -400,7 +374,6 @@ setInterval(() => {
     document.getElementById("t-secs").innerText = Math.floor((diff % 60000) / 1000);
 }, 1000);
 
-// Compliment Jar
 const compliments = [
   "You're a brilliant listener.", 
   "You give the best advice.", 
@@ -413,7 +386,6 @@ document.getElementById('compliment-jar').addEventListener('click', function() {
     setTimeout(() => { txt.innerText = compliments[Math.floor(Math.random()*compliments.length)]; txt.style.opacity = 1; }, 300);
 });
 
-// Envelope Popup
 const popup = document.getElementById('surprise-popup');
 document.getElementById('surprise-trigger').addEventListener('click', () => popup.classList.add('open'));
 document.getElementById('popup-close').addEventListener('click', () => popup.classList.remove('open'));
